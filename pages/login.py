@@ -20,6 +20,14 @@ class LoginPage(BrowserUtils):
 
 
     def newUserSignUp(self, name, email):
-        self.wait.until(expected_conditions.visibility_of_element_located(self.signupName)).send_keys(name)
-        self.driver.find_element(*self.signupEmail).send_keys(email)
-        self.driver.find_element(*self.signUpSubmit).click()
+        name_field = self.wait.until(expected_conditions.visibility_of_element_located(self.signupName))
+        self.highlight(name_field)
+        name_field.send_keys(name)
+
+        email_field= self.driver.find_element(*self.signupEmail)
+        self.highlight(email_field)
+        email_field.send_keys(email)
+
+        submit = self.driver.find_element(*self.signUpSubmit)
+        self.highlight(submit)
+        submit.click()

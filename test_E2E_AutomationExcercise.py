@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 
 from pages.homepage import HomePage
 from pages.login import LoginPage
+from pages.signup import SignUp
 
 # Load test data
 with open("test_data/testdata.json") as f:
@@ -33,8 +34,11 @@ def test_e2e(browserInstance):
     loginPage.newUserSignUp("Himalaya","himalaya@yammer.com")
 
 
+    sign_up=SignUp(driver)
 
-# 8. Verify that 'ENTER ACCOUNT INFORMATION' is visible
+    # 8. Verify that 'ENTER ACCOUNT INFORMATION' is visible
+    assert sign_up.validate_Label_Enter_Account_Info(), "'Enter Account Information' is not visible"
+
 # 9. Fill details: Title, Name, Email, Password, Date of birth
 # 10. Select checkbox 'Sign up for our newsletter!'
 # 11. Select checkbox 'Receive special offers from our partners!'

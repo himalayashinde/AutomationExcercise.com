@@ -11,5 +11,6 @@ class HomePage(BrowserUtils):
 
 
     def click_signup_login(self):
-        self.driver.find_element(*self.signup_login_link).click()
-
+        click_signup = self.driver.find_element(*self.signup_login_link)
+        self.highlight(click_signup)
+        click_signup.click()
