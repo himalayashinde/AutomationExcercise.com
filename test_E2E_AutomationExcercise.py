@@ -15,15 +15,10 @@ with open("test_data/testdata.json") as f:
 def test_e2e(browserInstance):
     driver = browserInstance
 
-    driver.find_element(By.XPATH, "//a[text()=' Signup / Login']")
+    driver.find_element(By.XPATH, "//a[text()=' Signup / Login']").click()
 
 
     loginPage = LoginPage(driver)
     print(loginPage.getTitle())
     loginPage.newUserSignUp("Himalaya","himalaya@yammer.com")
 
-
-    # # div[class='signup-form'] input[name='name']
-    # driver.find_element(By.CSS_SELECTOR,"div[class='signup-form'] input[name='name']").send_keys("Himalaya")
-    # driver.find_element(By.CSS_SELECTOR,"div[class='signup-form'] input[name='email']").send_keys("himalaya@yammer.com")
-    # driver.find_element(By.XPATH,"//button[text()='Signup']").click()
