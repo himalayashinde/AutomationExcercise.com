@@ -2,7 +2,6 @@ import pytest
 import json
 
 from selenium.webdriver.common.by import By
-
 from pages.homepage import HomePage
 from pages.login import LoginPage
 from pages.signup import SignUp
@@ -41,7 +40,9 @@ def test_e2e(browserInstance):
 
     # 9. Fill details: Title, Name, Email, Password, Date of birth
     sign_up.select_title()
-
+    sign_up.set_name("Himalaya")
+    sign_up.set_email("Himalaya@yammer.com")
+    sign_up.set_password("Himalaya@1234")
 
 # 10. Select checkbox 'Sign up for our newsletter!'
 # 11. Select checkbox 'Receive special offers from our partners!'
