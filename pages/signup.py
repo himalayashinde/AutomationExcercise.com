@@ -1,3 +1,4 @@
+from adodbapi.examples.xls_read import driver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
@@ -11,6 +12,14 @@ class SignUp(BrowserUtils):
         self.driver = driver
         self.wait = WebDriverWait(driver,10)
         self.account_banner = (By.XPATH,"//b[text()='Enter Account Information']")
+        self.title_selected = (By.ID,"id_gender1")
 
     def validate_Label_Enter_Account_Info(self):
-        return self.wait.until(EC.visibility_of_element_located(self.account_banner)).is_displayed()
+        label = self.wait.until(EC.visibility_of_element_located(self.account_banner))
+        self.highlight(label)
+        return label.is_displayed()
+
+    def select_title(self):
+        title = self.driver.find_element(*self.title_selected)
+        self.highlight(title)
+        title.click()

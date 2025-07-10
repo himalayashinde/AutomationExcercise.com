@@ -39,7 +39,10 @@ def test_e2e(browserInstance):
     # 8. Verify that 'ENTER ACCOUNT INFORMATION' is visible
     assert sign_up.validate_Label_Enter_Account_Info(), "'Enter Account Information' is not visible"
 
-# 9. Fill details: Title, Name, Email, Password, Date of birth
+    # 9. Fill details: Title, Name, Email, Password, Date of birth
+    sign_up.select_title()
+
+
 # 10. Select checkbox 'Sign up for our newsletter!'
 # 11. Select checkbox 'Receive special offers from our partners!'
 # 12. Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number
