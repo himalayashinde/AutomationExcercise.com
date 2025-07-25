@@ -25,3 +25,37 @@ This project automates the end-to-end shopping flow of an e-commerce site using 
 ### Bonus (Planned)
 
 - API testing with **Postman** or **Rest Assured** (via Python) may be added in the future if required.
+
+## Setup
+
+1. Clone the repository:
+   ```bash
+   git clone <repo-url>
+   cd AutomationExcercise.com
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+- To run all tests and generate an HTML report:
+  ```bash
+  pytest --html=reports/report.html
+  ```
+- To run a specific test:
+  ```bash
+  pytest tests/test_sample.py
+  ```
+
+## Contributing
+
+- Fork the repository and create a feature branch.
+- Add/modify tests in the `tests/` directory.
+- Run tests locally before submitting a pull request.
+
+## Troubleshooting
+
+- Ensure ChromeDriver/GeckoDriver is installed and in your PATH.
+- Use a virtual environment to avoid dependency conflicts.
